@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://alirazatss.github.io/analytics/",
+  "homepage": "https://alirazatss.github.io/analytics",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
