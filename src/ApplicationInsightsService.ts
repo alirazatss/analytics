@@ -1,4 +1,6 @@
-import {ApplicationInsights, ITelemetryItem} from '@microsoft/applicationinsights-web';
+import {ApplicationInsights, 
+    // ITelemetryItem
+} from '@microsoft/applicationinsights-web';
 import {ReactPlugin} from '@microsoft/applicationinsights-react-js';
 
 
