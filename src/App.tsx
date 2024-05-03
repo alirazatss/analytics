@@ -1,6 +1,5 @@
 import ShadcnTest from './ShadcnTest'
 import './App.css'
-
 function App() {
 
   return (

@@ -19,7 +19,8 @@ export const UsersList = () => {
 
   
   return (
-    <div className="container mx-auto py-10">
+    <div>
+      <h1 className="mb-8 mt-0 text-5xl font-medium leading-tight text-primary">Users</h1>
       <DataTable columns={columns} data={users} />
     </div>
   )

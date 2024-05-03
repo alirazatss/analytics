@@ -27,13 +27,15 @@ const formSchema = z.object({
   phone: z.string().min(10, {
     message: "Phone number must be at least 10 characters.",
   }),
+  fileUpload: z.string().optional(),
 })
 
 export interface AddUserFormProps {
   onSubmit: (data: z.infer<typeof formSchema>) => void
+  onTrackUpload: () => void
 }
 
-export const AddUserForm = ({ onSubmit }: AddUserFormProps) => {
+export const AddUserForm = ({ onSubmit, onTrackUpload }: AddUserFormProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -41,6 +43,7 @@ export const AddUserForm = ({ onSubmit }: AddUserFormProps) => {
       name: "",
       email: "",
       phone: "",
+      fileUpload: "",
     },
   })
 
@@ -93,6 +96,19 @@ export const AddUserForm = ({ onSubmit }: AddUserFormProps) => {
             <FormLabel>Phone</FormLabel>
             <FormControl>
               <Input placeholder="Phone" {...field} />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="fileUpload"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>File Upload</FormLabel>
+            <FormControl>
+              <Input type="file" placeholder="fileUpload" {...field} onClick={onTrackUpload} />
             </FormControl>
             <FormMessage />
           </FormItem>

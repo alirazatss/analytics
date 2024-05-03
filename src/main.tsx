@@ -4,8 +4,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { AppInsightsContext } from '@microsoft/applicationinsights-react-js';
 import { UsersList } from './users/list/UsersList';
 import { AddUser } from './users/add/AddUser'
+import { reactPlugin } from './ApplicationInsightsService';
 
 import './index.css'
 
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className="container mx-auto py-20">
+    <AppInsightsContext.Provider value={reactPlugin}>
+      <RouterProvider router={router} />
+    </AppInsightsContext.Provider>
+    </div>
   </React.StrictMode>,
 )
