@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { columns } from "./Columns"
 import { DataTable } from "./DataTable"
 import { User } from "./types"
+import { Link } from "react-router-dom";
 
 
 const fetchUsers = async () => {
@@ -21,6 +22,7 @@ export const UsersList = () => {
   return (
     <div>
       <h1 className="mb-8 mt-0 text-5xl font-medium leading-tight text-primary">Users</h1>
+      <Link to="user/add">Add User</Link>
       <DataTable columns={columns} data={users} />
     </div>
   )
