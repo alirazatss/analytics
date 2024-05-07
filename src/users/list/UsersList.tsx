@@ -22,7 +22,7 @@ export const UsersList = () => {
   return (
     <div>
       <h1 className="mb-8 mt-0 text-5xl font-medium leading-tight text-primary">Users</h1>
-      <Link to="user/add">Add User</Link>
+      <div className="flex justify-end text-zinc-800 underline font-bold text-lg"><Link to="user/add">Add User</Link></div>
       <DataTable columns={columns} data={users} />
     </div>
   )
