@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
-  createMemoryRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import { AppInsightsContext } from '@microsoft/applicationinsights-react-js';
@@ -11,7 +11,7 @@ import { reactPlugin } from './ApplicationInsightsService';
 
 import './index.css'
 
-const router = createMemoryRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <UsersList />,
